@@ -1,0 +1,111 @@
+
+@charset "UTF-8";
+<script>
+/* 본문전체 적용 */	
+	* { box-sizing: border-box;	}
+	body  {	
+		padding: 10px;	
+		font-family: Gulim;	
+	}
+	
+/* 헤더 (회사로고부분) */	
+	.header {
+		padding: 2px;	
+		background-color: #000;
+	}
+	.header a{ font-size:12px; }
+	.header img{ width :150px; }	
+	.header_menu {
+		padding: 5px; 
+		background-color: #31AA4D;
+	}
+	.header_menu a { 
+		color: #FFF8DC; 
+		padding: 5px;  
+		text-decoration: none;	
+	}
+	.header_menu div {
+		float: left; 
+		text-align: center;
+	}
+/* 네비게이션 (메뉴부분) */	
+	.nav {
+		padding: 5px; 
+		background-color: #31AA4D;
+	}
+	.nav a { 
+		color: #FFF8DC; 
+		padding: 5px;  
+		text-decoration: none;	
+	}
+	.nav div {
+		float: left; 
+		text-align: center;
+	}
+
+/* body (본문부분) */	
+/*1. 내용이 같을 경우 (화면비율에 따라 폭 자동조절) : <div class="container">*/	
+/*2. 폭이 넗을 때와 좁을 때 다른 내용을 보여줘야 할 경우 : container안에 아래 div삽입
+						폭이 넓은 스크린 <div class="wide-screen">
+						폭이 좁은 스크린 <div class="less-wide-screen">*/	
+	.wide-screen{ display: flex; }
+	.less-wide-screen{ display: none; }
+	
+/*3. 한 화면에 좌우로 2가지 내용을 담을 경우(화면이 좁아지면 오른쪽 내용이 아래로 내려옴)
+		container안에 아래 div삽입 : 왼쪽 <div class="left">
+								오른쪽 <div class="right">*/		
+	.left {   
+		float: left;
+		width: 50%;
+		background-color: #fff;
+		padding: 10px;
+	}
+	.right {
+		float: left;
+		width: 50%;
+		background-color: #fff;
+		padding: 10px;
+	}
+	.vegemarket-card  {
+		background-color: #fff;
+		padding: 10px;
+		margin-top: 0px;
+	}
+	.market-center{
+		width: 50%;
+	}
+
+/* 풋터 (하단설명부분) */
+	.footer  {
+		padding: 10px;
+		text-align: center;
+		background: white;
+		margin-top: 20px;
+	}
+
+
+	
+/* 화면이 좁아지면 아래 내용이 자동 적용되고 넗어지면 자동 해제된다*/
+
+	@media (max-width: 600px){
+		
+	/* 본문전체 적용 */	
+		body{ margin: 0px; padding: 0px;}
+		
+	/* 헤더 (회사로고부분) */	
+		.header { padding: 0px; }
+		.header img{width :100px;	}
+		
+	/* 네비게이션 (메뉴부분) */
+		.nav  {	padding: 0px;}
+
+		
+	/* body (본문부분) */
+		.container{ padding: 0px; }	
+		.wide-screen{ display: none; }
+		.less-wide-screen{ display: flex; }
+		.left, .right {width: 100%;  padding: 0px;}
+	}
+}
+
+</script>
